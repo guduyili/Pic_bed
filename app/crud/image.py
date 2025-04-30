@@ -10,6 +10,7 @@ def create_image(db: Session, image: ImageCreate):
     db.refresh(db_image)
     return db_image
 
+
 def get_all_images(db: Session):
     return db.query(Image).all()
 

@@ -1,5 +1,14 @@
-fastapi
-uvicorn
-sqlalchemy
-pydantic
-python-multipart
+# FastAPI 核心框架
+fastapi>=0.100.0          # 高性能 Web 框架
+uvicorn>=0.23.2           # ASGI 服务器，用于运行 FastAPI 应用
+
+# 数据库与 ORM
+sqlalchemy>=2.0.0         # SQLAlchemy ORM 工具
+pydantic-settings>=2.9.1   # 环境配置管理（替代旧版 BaseSettings）
+python-dotenv>=1.0         # 加载 .env 文件（pydantic-settings 依赖）
+
+# 文件处理与上传
+python-multipart>=0.0.5   # 支持表单文件上传（FastAPI 推荐依赖）
+
+# 类型校验与数据处理
+pydantic>=2.11.3          # 数据校验与序列化（FastAPI 核心依赖）
