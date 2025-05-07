@@ -3,8 +3,12 @@ from fastapi import UploadFile
 from pathlib import Path
 from .config import settings
 
-# 获取存储目录
-STORAGE_DIR = Path(settings.storage_dir)
+# 获取存储目录，如果自定义路径存在则使用自定义路径
+if settings.custom_upload_path:
+    STORAGE_DIR = Path(settings.custom_upload_path)
+else:
+    STORAGE_DIR = Path(settings.storage_dir)
+
 # 创建存储目录（如果不存在）
 STORAGE_DIR.mkdir(parents=True, exist_ok=True)
 

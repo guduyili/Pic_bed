@@ -108,3 +108,5 @@ def delete_image(image_id: int, db: Session = Depends(get_db)):
         os.remove(db_image.save_path)
 
     return {"message": "删除成功"}
+
+## 自定义上传图片路径

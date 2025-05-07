@@ -11,6 +11,9 @@ class Settings(BaseSettings):
     server_host: str = os.getenv("SERVER_HOST", "127.0.0.1")
     server_port: int = int(os.getenv("SERVER_PORT", "8000"))
 
+    # 自定义上传路径
+    custom_upload_path: str = os.getenv("CUSTOM_UPLOAD_PATH", "")
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
